@@ -1,0 +1,41 @@
+ion-toolbar {
+  color: var(--cs-text-light, #ffffff);
+}
+.ios {
+  ion-back-button,
+  ion-menu-button {
+    --color: var(--cs-text-light, #ffffff);
+  }
+}
+
+.active {
+  ion-toolbar {
+    background: var(--cs-background-primary, #fff);
+    color: var(--cs-text-accent, #FB5135);
+  }
+  .ios {
+    ion-back-button,
+    ion-menu-button {
+      --color: var(--cs-text-accent, #FB5135);
+    }
+  }
+}
+
+[background-size] {
+  height: 30vh;
+  position: relative;
+  /* Parallax Title
+   =============================================*/
+  [info-section] {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+}
+
+[button-action-shit] {
+  ion-icon {
+    color: var(--cs-icon-color-primary);
+  }
+}

@@ -1,0 +1,17 @@
+<ion-item no-padding margin-start *ngIf="data != null" lines="none">
+  <ion-label text-size-xs text-color-primary font-bold text-capitalize>{{data.header}}</ion-label>
+</ion-item>
+<ion-item no-padding margin-start margin-bottom *ngIf="data != null">
+  <ion-label text-size-xs text-color-secondary font-regular>{{data.title}}</ion-label>
+  <ion-select interface="popover" [(ngModel)]="data.selectedItemMonth" multiple="true"
+    (ionChange)="onChangeMonthFunc($event)">
+    <ion-select-option *ngFor="let item of data.itemsMonth" [value]="item.id">{{item.title}}
+    </ion-select-option>
+  </ion-select>
+
+  <ion-select interface="popover" [(ngModel)]="data.selectedItemYear" [multiple]="true"
+    (ionChange)="onChangeYearsFunc($event)">
+    <ion-select-option *ngFor="let item of data.itemsYears" [value]="item.id">{{item.title}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>

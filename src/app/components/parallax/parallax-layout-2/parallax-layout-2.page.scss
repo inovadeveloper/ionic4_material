@@ -1,0 +1,44 @@
+:host {
+  --size-ion-avatar: 120px !important;
+}
+
+ion-toolbar {
+  color: var(--cs-text-light, #ffffff);
+}
+
+.ios {
+  ion-back-button,
+  ion-menu-button {
+    --color: var(--cs-text-light, #ffffff);
+  }
+}
+
+.active {
+  ion-toolbar {
+    background: var(--cs-background-primary, #fff);
+    color: var(--cs-text-accent, #FB5135);
+  }
+
+  .ios {
+    ion-back-button,
+    ion-menu-button {
+      --color: var(--cs-text-accent, #FB5135);
+    }
+  }
+}
+
+[background-size] {
+  height: 30vh;
+  position: relative;
+}
+
+[info-block] {
+  ion-avatar {
+    height: var(--size-ion-avatar);
+    width: var(--size-ion-avatar);
+    opacity: 1 !important;
+    margin: -75px auto 0;
+    z-index: 999;
+    position: relative;
+  }
+}

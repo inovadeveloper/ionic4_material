@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "238260117107",
+    "firebase_url": "https://ionic4-brkko-theme.firebaseio.com",
+    "project_id": "ionic4-brkko-theme",
+    "storage_bucket": "ionic4-brkko-theme.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238260117107:android:20e37bf50ceaf21f",
+        "android_client_info": {
+          "package_name": "com.csform.ionic4brkko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238260117107-9kc5atpiiflv6vgum1tj1i8nhvl8jb7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0IQuessf_DjowvHFqT45Y0aFOTvLj30E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238260117107-9kc5atpiiflv6vgum1tj1i8nhvl8jb7l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "238260117107-5mf3q8ekqvqmmurpric2r29qgpjg9cis.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.csform.ionic4brkko"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

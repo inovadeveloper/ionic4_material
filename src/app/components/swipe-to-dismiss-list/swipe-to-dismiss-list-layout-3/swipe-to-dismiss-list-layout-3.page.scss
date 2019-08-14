@@ -1,0 +1,30 @@
+/* Style component 3
+========================================================*/
+ion-item-option {
+  --background: var(--cs-background-primary, #fff);
+}
+
+ion-item-sliding {
+  margin: 0 0 16px;
+  border-radius: var(--border-radius, 5px);
+}
+
+[background-size] {
+  border-radius: var(--border-radius, 5px) !important;
+}
+
+ion-item {
+  position: relative;
+  --border-radius: var(--border-radius, 5px);
+  --background: transparent;
+  --min-height: 250px;
+
+  ion-label {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+  }
+}

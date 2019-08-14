@@ -1,0 +1,81 @@
+<ion-app>
+  <!--- Header -->
+  <ion-header>
+    <ion-toolbar box-shadow>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>All</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--- Content text exapmles  --->
+  <ion-content padding>
+    <ion-grid>
+      <ion-col size="12">
+        <ion-list>
+          <div title-components text-uppercase padding-bottom text-size-lg>Typography examples:</div>
+          <h1 text-size-xl>This is example of h1 title.</h1>
+          <h2 text-size-lg>And this is example of h2 title/subtitle.</h2>
+          <h3 text-size-md>Example of h3 subtitle is also here.</h3>
+          <h4 text-size-xs>And h4 subtitle example is here.</h4>
+          <h5 text-size-sm>h5 subtitle is like this!</h5>
+          <h6 text-size-sm>And h6 at the end usualy same as h6.</h6>
+          <p text-size-p>This is example of paragraph text.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <!--- BUTTON EXAMPLE  --->
+          <div title-components text-uppercase padding-vertical text-size-md margin-bottom>Button examples:</div>
+          <ion-row>
+            <ion-col size="12" size-md="6">
+              <span text-size-xs text-capitalize>Default button</span>
+              <div clerfix></div>
+              <ion-button text-capitalize default-button>
+                Button
+              </ion-button>
+            </ion-col>
+            <ion-col size="12" size-md="6">
+              <span text-size-xs text-capitalize>Button with icon</span>
+              <div clerfix></div>
+              <ion-button text-capitalize button-icon fill="clear">
+                <ion-icon icon-small slot="start" name="star"></ion-icon>
+                Button
+              </ion-button>
+            </ion-col>
+            <ion-col size="12" size-md="6">
+              <span text-size-xs text-capitalize>Clear button</span>
+              <div clerfix></div>
+              <ion-button text-capitalize button-clear fill="clear">
+                Button
+              </ion-button>
+            </ion-col>
+            <ion-col size="12" size-md="6">
+              <span text-size-xs text-capitalize>Action Sheet Button</span>
+              <div clerfix></div>
+              <ion-button button-action-shit>
+                <ion-icon icon-large name="ios-more"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <!--- ICON EXAMPLES  --->
+          <div title-components text-uppercase padding-vertical text-size-md margin-bottom>ICON EXAMPLES:</div>
+          <span block padding-vertical text-size-xs>Small</span>
+          <i icon-small class="icon icon-thumb-up"></i>
+          <i icon-small class="icon icon-heart"></i>
+          <i icon-small class="icon icon-share-variant"></i>
+          <div clerfix></div>
+          <span block padding-vertical text-size-xs>Medium</span>
+          <i icon-medium class="icon icon-thumb-up"></i>
+          <i icon-medium class="icon icon-heart"></i>
+          <i icon-medium class="icon icon-share-variant"></i>
+          <div clerfix></div>
+          <span block padding-vertical text-size-xs>Large</span>
+          <i icon-large class="icon icon-thumb-up"></i>
+          <i icon-large class="icon icon-heart"></i>
+          <i icon-large class="icon icon-share-variant"></i>
+        </ion-list>
+      </ion-col>
+    </ion-grid>
+  </ion-content>
+</ion-app>

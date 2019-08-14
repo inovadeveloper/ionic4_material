@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar box-shadow>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>RTL + Color change</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-lable text-size-xs text-color-primary font-bold padding-end>Testing our application with Rtl (enable)</ion-lable>
+          <ion-checkbox slot="end" [(ngModel)]="rtlChecked" (ionChange)="ionChange($event)"></ion-checkbox>
+        </ion-item>
+        <ion-item lines="none">
+          <h1 text-size-lg text-color-primary font-bold>After changing rtl, please restart app.</h1>
+        </ion-item>
+        <!--- Button color combination -->
+        <ion-col size="12">
+          <ion-button ion-item margin-top expand="block" default-button sunset-orange (click)="changeTheme('sunset-orange')">
+            Sunset Orange
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button mocha (click)="changeTheme('mocha')">
+            Mocha
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button seagull (click)="changeTheme('seagull')">
+            Seagull
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button turquoise (click)="changeTheme('turquoise')">
+            Turquoise
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button bull-shot (click)="changeTheme('bull-shot')">
+            Bull Shot
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button olive-drab (click)="changeTheme('olive-drab')">
+            Olive Drab
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button flush-orange (click)="changeTheme('flush-orange')">
+            Flush Orange
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button pastel-green (click)="changeTheme('pastel-green')">
+            Pastel Green
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button emerald (click)="changeTheme('emerald')">
+            Emerald
+          </ion-button>
+          <ion-button ion-item margin-top expand="block" default-button my-sin (click)="changeTheme('my-sin')">
+            My Sin
+          </ion-button>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

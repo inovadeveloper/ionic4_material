@@ -1,0 +1,54 @@
+<ion-header [ngClass]="{'active': isHeaderVisible }" >
+  <ion-toolbar transparent>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--- Theme Parallax Basic -->
+<ion-page class="ion-page">
+  <!--- Header Big Image-->
+  <ion-content scrollEvents="true" parallax-header *ngIf="data != null" (ionScroll)="scrolling($event)">
+    <div class="header-image">
+      <div background-size [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+        <div info-section *ngFor="let item of data.items;let i = index">
+          <ion-item transparent lines="none">
+            <ion-label>
+              <span new-category text-uppercase float-start>{{item.category}}</span>
+              <div clearfix></div>
+              <h1 text-size-xl text-color-light font-bold float-start>{{item.title}}</h1>
+              <div clearfix></div>
+              <!--Title parallax-->
+              <h2 text-size-md text-color-light font-regular float-start>{{item.subtitle}}</h2>
+              <div clearfix></div>
+            </ion-label>
+            <ion-label slot="end">
+              <ion-button button-action-shit float-end>
+                <ion-icon [name]="data.shareIcon"></ion-icon>
+              </ion-button>
+              <div clearfix></div>
+              <ion-badge text-uppercase float-end>{{item.button}}</ion-badge>
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+      <div box-shadow margin-bottom padding *ngFor="let item of data.items;let i = index">
+        <h2 text-size-md text-color-primary font-regular>{{item.titleDescription}}</h2>
+      </div>
+    </div>
+    <!-- Content -->
+    <ion-grid no-padding *ngIf="data != null">
+      <ion-row>
+        <ion-col margin-top no-padding size="12" *ngFor="let item of data.items;let i = index">
+          <ion-item lines="none" *ngFor="let productDescription of item.productDescriptions">
+            <ion-label>
+              <p text-size-md text-color-secondary font-regular text-wrap>{{productDescription.description}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

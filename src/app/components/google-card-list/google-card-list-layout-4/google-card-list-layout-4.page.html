@@ -1,0 +1,29 @@
+<!-- GOOGLE CARD --COMPONENT 4 -->
+<ion-grid no-padding *ngIf="data != null">
+  <ion-row>
+    <ion-col siz="12" size-md="6" *ngFor="let item of data.items">
+      <ion-card box-shadow padding  (click)="onItemClickFunc(item, $event)">
+        <ion-item no-padding lines="none" transparent>
+          <!-- Avatar -->
+          <ion-avatar slot="start">
+            <img [src]="item.avatar" alt="">
+          </ion-avatar>
+          <!-- Title And Subtitle -->
+          <ion-label>
+            <h2 text-size-md text-color-primary font-bold text-wrap>{{item.avatarTitle}}</h2>
+            <h3 text-size-xs text-color-primary font-light text-wrap>{{item.avatarSubtitle}}</h3>
+            <!-- Time -->
+            <p text-size-sm text-color-primary font-bold text-wrap>{{item.time}}</p>
+          </ion-label>
+        </ion-item>
+        <!-- Images -->
+        <ion-img [src]="item.image" alt=""></ion-img>
+        <!-- Content -->
+        <ion-card-content no-padding transparent>
+          <h2 text-size-md text-color-primary font-bold text-wrap padding-top>{{item.title}}</h2>
+          <p text-size-p text-color-primary font-light padding-top>{{item.description}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

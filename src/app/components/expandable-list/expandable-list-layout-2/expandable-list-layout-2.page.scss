@@ -1,0 +1,52 @@
+/* Style component 2
+========================================================*/
+li {
+  list-style-type: none;
+}
+
+[background-size] {
+  height: 215px;
+  position: relative;
+  border-radius: var(--border-radius, 5px);
+  overflow: hidden;
+
+  ion-item {
+    position: absolute;
+    --background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  [button-icon] {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+}
+/* Settings Accordion "OPEN" */
+.item-accordion {
+  max-height: 0;
+  display: block !important;
+  -moz-transition: all 400ms;
+  -ms-transition: all 400ms;
+  -o-transition: all 400ms;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  overflow: hidden;
+
+  &.active {
+    -moz-transition: all 400ms;
+    -ms-transition: all 400ms;
+    -o-transition: all 400ms;
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    overflow: visible;
+    max-height: 999px;
+  }
+
+  [icon-medium]::before {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}

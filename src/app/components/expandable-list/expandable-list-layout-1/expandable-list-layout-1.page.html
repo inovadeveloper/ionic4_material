@@ -1,0 +1,61 @@
+<!-- EXPANDABLE --COMPONENT 1 -->
+<ion-app>
+  <!-- Header -->
+  <ion-header box-shadow>
+    <ion-toolbar >
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content *ngIf="data != null">
+  <ion-grid no-padding>
+    <ion-row *ngIf="data != null">
+      <ion-col size="12" no-padding>
+        <!-- Header List Big Image -->
+        <ion-list-header box-shadow margin-bottom>
+          <ion-label padding-top padding-bottom>
+            <h1 text-size-md font-regular text-color-accent>{{data.header}}</h1>
+          </ion-label>
+        </ion-list-header>
+        <ion-list no-margin>
+          <ul collapsible no-margin no-padding>
+            <li *ngFor="let group of data.items;">
+              <!-- List big image Header -->
+              <div collapsible-header no-padding (click)="toggleGroup(group)">
+                <ion-item>
+                  <ion-thumbnail>
+                    <ion-img [src]="group.image" [alt]="group.title"></ion-img>
+                  </ion-thumbnail>
+                  <ion-label align-self-start padding-start>
+                    <h2 text-size-md text-color-primary font-bold text-wrap padding-bottom>{{group.title}}</h2>
+                    <h3 text-size-xs text-color-primary font-light text-wrap>{{group.description}}</h3>
+                  </ion-label>
+                </ion-item>
+              </div><!-- End List big image Header -->
+              <!-- LIST OPEN ACCORDIAN BODY  -->
+              <div item-accordion [ngClass]="{'active': group.show }" [hidden]="!group.show">
+                <ion-item transparent *ngFor="let item of group.items;" (click)="onItemClickFunc(item, $event)">
+                  <!-- Avatar -->
+                  <ion-thumbnail>
+                    <img [src]="item.image" [alt]="item.title" />
+                  </ion-thumbnail>
+                  <ion-label padding-start>
+                    <!-- Subtitle Title -->
+                    <h2 text-size-md text-color-primary font-bold text-nowrap>{{item.title}}</h2>
+                    <!-- Subtitle Subtitle -->
+                    <h3 text-size-xs text-color-primary font-light text-wrap>{{item.description}}</h3>
+                    <p text-size-sm text-color-secondary font-regular>{{item.details}}</p>
+                  </ion-label>
+                </ion-item>
+              </div>
+              <!-- End List big image Body -->
+            </li>
+          </ul>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+</ion-app>

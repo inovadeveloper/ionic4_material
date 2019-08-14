@@ -1,0 +1,105 @@
+<!-- Theme Segment - Segment List -->
+<ion-page class="ion-page">
+  <ion-header>
+    <ion-toolbar box-shadow>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title *ngIf="data != null" text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+    <!--Segment Section -->
+    <ion-toolbar no-padding>
+      <div segment-block *ngIf="data != null">
+        <ion-segment [(ngModel)]="selectedItem">
+          <ion-segment-button text-capitalize value="Page1">
+            <ion-label text-size-sm text-color-primary font-regular>{{data.segmentButton1}}</ion-label>
+          </ion-segment-button>
+          <ion-segment-button text-capitalize value="Page2">
+            <ion-label text-size-sm text-color-primary font-regular>{{data.segmentButton2}}</ion-label>
+          </ion-segment-button>
+          <ion-segment-button text-capitalize value="Page3">
+            <ion-label text-size-sm text-color-primary font-regular>{{data.segmentButton3}}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Content-->
+  <ion-content>
+    <ion-grid no-padding *ngIf="data != null">
+      <!--- SETTINGS PAGE1 SCREEN -->
+      <ion-row page1 *ngIf="isEnabled('Page1')">
+        <ion-col no-padding size="12">
+          <!-- Header Image -->
+          <div background-size [ngStyle]="{'background-image': 'url(' + data.page1.background + ')'}"></div>
+          <ion-item *ngFor="let item of data.page1.items" (click)="onItemClickFunc(item, $event)">
+            <ion-thumbnail>
+              <img [src]="item.image" alt="">
+            </ion-thumbnail>
+            <ion-label padding-start>
+              <h2 text-wrap text-size-md font-bold text-color-primary>{{item.title}}</h2>
+              <h3 text-wrap text-size-xs class="ion-padding-top" text-color-secondary>{{item.description}}</h3>
+            </ion-label>
+            <ion-button box-shadow default-button slot="end">{{item.button}}</ion-button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!--- SETTINGS PAGE2 SCREEN -->
+      <ion-row page2 *ngIf="isEnabled('Page2')">
+        <ion-col no-padding size="12">
+          <!-- Header Image -->
+          <div background-size [ngStyle]="{'background-image': 'url(' + data.page2.background + ')'}"></div>
+          <ion-item *ngFor="let item of data.page2.items" (click)="onItemClickFunc(item, $event)">
+            <ion-thumbnail>
+              <img [src]="item.image" alt="">
+            </ion-thumbnail>
+            <ion-label padding-start>
+              <h2 text-wrap text-size-md font-bold text-color-primary>{{item.title}}</h2>
+              <h3 text-wrap text-size-xs class="ion-padding-top" text-color-secondary>{{item.description}}</h3>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!--- SETTINGS PAGE3 SCREEN -->
+      <ion-row page3 *ngIf="isEnabled('Page3')">
+        <ion-col no-padding size="12">
+          <ion-list>
+            <!--Header-->
+            <ion-list-header box-shadow padding>
+              <!-- Title and Subtitle -->
+              <ion-item lines="none" no-padding>
+                <ion-label>
+                  <h1 text-size-xs text-wrap>{{data.page3.title}}</h1>
+                  <h2 text-size-xs text-size-xs no-margin text-wrap>{{data.page3.subtitle}}</h2>
+                </ion-label>
+                <!--Header Button Procead---->
+                <ion-button default-button box-shadow slot="end">
+                  {{data.page3.button}}
+                </ion-button>
+              </ion-item>
+            </ion-list-header>
+            <!-- Content -->
+            <ion-reorder-group disabled="false" (ionItemReorder)="ionItemReorder($event)">
+              <ion-item *ngFor="let item of data.page3.items" (click)="onItemClickFunc(item, $event)">
+                <!-- Avatar -->
+                <ion-thumbnail>
+                  <img [src]="item.image">
+                </ion-thumbnail>
+                <ion-label padding-start>
+                  <h2 text-wrap font-bold text-size-md text-color-primary>{{item.title}}</h2>
+                  <h3 text-wrap font-regular text-color-secondary text-size-xs>{{item.subtitle}}</h3>
+                  <!-- Badge -->
+                  <ion-badge class="ion-margin-top">{{item.price}}</ion-badge>
+                </ion-label>
+                <ion-reorder></ion-reorder>
+              </ion-item>
+            </ion-reorder-group>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

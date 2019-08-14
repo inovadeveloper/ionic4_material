@@ -1,0 +1,31 @@
+/* Style component 1
+========================================================*/
+
+ion-card {
+  border-radius: var(--border-radius, 5px);
+  margin: 10px;
+
+  [card-image] {
+    position: relative;
+
+    img {
+      width: 100% !important;
+    }
+
+    [card-title-section] {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      [text-size-xl] {
+        line-height: 39px;
+      }
+    }
+  }
+
+  ion-item {
+    --inner-padding-end: 0;
+  }
+}

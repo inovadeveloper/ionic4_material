@@ -1,0 +1,65 @@
+/* Settings Button
+===========================================*/
+ion-segment {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  ion-segment-button {
+    width: auto !important;
+    overflow: visible;
+    padding: 0 10px !important;
+    align-items: center;
+    display: grid;
+  }
+}
+
+[page1] {
+  ion-card {
+    margin: 5px 10px;
+    border-radius: var(--border-radius);
+  }
+
+  ion-avatar {
+    height: 120px !important;
+    width: 120px !important;
+    margin: 10px auto !important;
+  }
+
+  [social-share] {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  ion-slides {
+    padding-bottom: 30px !important;
+
+    ion-slide {
+      ion-card {
+        width: 100%;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+      }
+    }
+  }
+}
+
+[page2] {
+  ion-card {
+    margin: 10px;
+    border-radius: var(--border-radius);
+  }
+}
+
+[page3] {
+  .sebm-google-map-container {
+    height: 350px;
+  }
+}

@@ -1,0 +1,55 @@
+/* Settings Button
+===========================================*/
+
+ion-segment {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  ion-segment-button {
+    width: auto !important;
+    overflow: visible;
+    padding: 0 10px !important;
+    align-items: center;
+    display: grid;
+  }
+}
+
+[page1] {
+  ion-card {
+    margin: 5px 10px;
+    border-radius: var(--border-radius);
+  }
+
+  [social-share] {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+
+[page2] {
+  ion-card {
+    position: relative;
+    height: 250px;
+    border-radius: var(--border-radius, 5px);
+    margin: 10px;
+  }
+
+  ion-item {
+    position: absolute;
+    --background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+[page3] {
+  ion-card {
+    border-radius: var(--border-radius, 5px);
+    margin: 10px;
+  }
+}

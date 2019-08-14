@@ -1,0 +1,25 @@
+/* Style component 1
+========================================================*/
+ion-card {
+  border-radius: var(--border-radius, 5px);
+
+  ion-card-content {
+    position: relative;
+
+    [ion-card-subtitle] {
+      position: absolute;
+      background: rgba(0,0,0,.6);
+      color: var(--cs-text-color-light);
+      z-index: 999;
+      left: 0;
+      top: 0;
+      right: 0;
+    }
+
+    [new-category] {
+      position: absolute;
+      bottom: 16px;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<!--Google Maps Gmaps + About Us-->
+<ion-page class="ion-page">
+  <!-- Header -->
+  <ion-header>
+    <ion-toolbar box-shadow>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content *ngIf="data != null">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+          <!-- Maps Title-->
+          <h1 text-size-md text-wrap text-color-accent>{{data.title}}</h1>
+          <!-- Maps Subttitle-->
+          <h2 text-size-xl font-bold text-color-primary>{{data.titleDescription}}</h2>
+          <h2 text-size-md font-medium no-margin text-color-primary text-wrap class="ion-padding-top">{{data.contentTitle}}</h2>
+          <p text-wrap text-color-secondary text-size-xs>{{data.contentDescription}}</p>
+          <!---About Info-->
+          <ion-list lines="none">
+            <ion-item no-padding>
+              <i icon-medium slot="start" class="icon {{data.iconLoacation}}"></i>
+              <p no-margin font-bold text-size-xs>{{data.iconLoacationText}}</p>
+            </ion-item>
+            <ion-item no-padding>
+              <i icon-medium slot="start" class="icon {{data.iconWatch}}"></i>
+              <p no-margin font-bold text-size-xs>{{data.iconWatchText}}</p>
+            </ion-item>
+            <ion-item no-padding>
+              <i icon-medium slot="start" class="icon {{data.iconPhone}}"></i>
+              <p no-margin font-bold text-size-xs>{{data.iconPhoneText}}</p>
+            </ion-item>
+            <ion-item no-padding>
+              <i icon-medium slot="start" class="icon {{data.iconEarth}}"></i>
+              <p no-margin font-bold text-size-xs>{{data.iconEarthText}}</p>
+            </ion-item>
+            <ion-item no-padding>
+              <i icon-medium slot="start" class="icon {{data.iconEmail}}"></i>
+              <p no-margin font-bold text-size-xs>{{data.iconEmailText}}</p>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-col size="12">
+        <!---MAP TEXT-->
+        <h2 margin-start text-size-xs text-color-primary>{{data.titleMap}}</h2>
+        <agm-map [latitude]="data.map.lat" [longitude]="data.map.lng" [zoom]="data.map.zoom" [mapTypeControl]="data.map.mapTypeControl" [streetViewControl]="data.map.streetViewControl">
+          <agm-marker [latitude]="data.map.lat" [longitude]="data.map.lng"></agm-marker>
+        </agm-map>
+      </ion-col>
+    </ion-grid>
+  </ion-content>
+</ion-page>

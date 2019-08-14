@@ -1,0 +1,13 @@
+ion-card {
+  height: 170px;
+  border-radius: var(--border-radius, 5px);
+  position: relative;
+
+  ion-card-content {
+    position: absolute;
+    top: 20% !important;
+    width: 96%;
+    left: 2%;
+    z-index: 9999;
+  }
+}

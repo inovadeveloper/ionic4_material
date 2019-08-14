@@ -1,0 +1,30 @@
+/* Settings Button
+===========================================*/
+ion-segment {
+  display: flex !important;
+  flex-direction: row !important;
+  overflow: auto !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+
+  ion-segment-button {
+    width: auto !important;
+    overflow: visible !important;
+    padding: 0 10px !important;
+    align-items: center !important;
+    display: grid !important;
+  }
+}
+
+[page1],
+[page2] {
+  [background-size] {
+    height: 250px;
+  }
+}
+
+[page3] {
+  ion-list-header {
+    display: block;
+  }
+}

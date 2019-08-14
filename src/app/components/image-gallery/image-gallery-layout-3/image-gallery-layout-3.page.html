@@ -1,0 +1,13 @@
+<!---Theme Gallery for Full gallery 2-->
+<ion-grid *ngIf="data != null">
+  <ion-row>
+    <ion-col no-margin size="12" size-md="6" *ngFor="let item of data.items;let i = index">
+      <ion-card no-margin background-size box-shadow [ngStyle]="{'background-image': 'url(' + item.image + ')'}" (click)="onItemClickFunc(item, i, $event)">
+        <ion-card-content transparent text-center>
+          <h2 text-size-xl text-color-accent font-bold text-wrap>{{item.title}}</h2>
+          <h2 text-size-xs text-color-primary font-medium text-wrap>{{item.subtitle}}</h2>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,35 @@
+<!-- Theme Search Bars - Simple -->
+<ion-page class="ion-page">
+  <!-- Header -->
+  <ion-header box-shadow margin-bottom>
+    <ion-toolbar box-shadow margin-bottom>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar [(ngModel)]="search" (ionInput)="onTextChangeFunc($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Content -->
+  <ion-content>
+    <ion-grid>
+      <ion-row *ngIf="data != null">
+        <ion-col size="12" *ngFor="let item of data.items | filter:search" (click)="onItemClickFunc(item, $event)">
+          <ion-card background-size box-shadow no-margin (click)="onEvent('onItemClick', item, $event)" [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+            <!--Card images-->
+            <ion-item lines="none" transparent>
+              <!--Card-content-->
+              <ion-label>
+                <h2 text-size-xl text-color-light font-regular text-wrap text-capitalize>{{item.title}}</h2>
+                <!--Description-->
+                <h3 text-size-xs text-color-light font-light text-wrap>{{item.subtitle}}</h3>
+              </ion-label>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

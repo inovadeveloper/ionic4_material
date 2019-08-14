@@ -1,0 +1,30 @@
+/* Profile 2
+========================================*/
+:host-context() {
+  --cs-size-avatar: 120px;
+}
+
+ion-card {
+  border-radius: var(--border-radius, 5px);
+  margin: 5px 10px;
+}
+
+ion-slides {
+  overflow: visible;
+
+  ion-card {
+    width: 100%;
+  }
+}
+
+ion-avatar {
+  height: var(--cs-size-avatar, 120px) !important;
+  width: var(--cs-size-avatar, 120px) !important;
+  margin: 0 auto !important;
+}
+
+[social-share] {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}

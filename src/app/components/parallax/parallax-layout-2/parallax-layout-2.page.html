@@ -1,0 +1,52 @@
+<ion-header [ngClass]="{'active': isHeaderVisible }" >
+  <ion-toolbar transparent>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--- Theme Parallax Product -->
+<ion-page class="ion-page">
+  <!--- Header Big Image -->
+  <ion-content scrollEvents="true" parallax-header *ngIf="data != null" (ionScroll)="scrolling($event)">
+    <div class="header-image">
+      <div padding background-size [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+      </div>
+      <div info-block text-center box-shadow margin-bottom padding>
+        <!-- Avatar-->
+        <ion-avatar>
+          <img [src]="data.avatar">
+        </ion-avatar>
+        <!--- Parallax Subtitle -->
+        <h1 text-size-xl text-color-primary font-bold *ngIf="data != null">{{data.title}}</h1>
+        <!--- Parallax Title -->
+        <h2 text-size-md text-color-primary font-regular no-margin *ngIf="data != null">{{data.subtitle}}</h2>
+      </div>
+    </div>
+    <!--Content-->
+    <ion-grid no-padding *ngIf="data != null">
+      <ion-row>
+        <ion-col no-padding size="12">
+          <ion-list no-margin>
+            <ion-item *ngFor="let item of data.items;let i = index" (click)="onItemClickFunc(item, $event)">
+              <!--Content Avatar-->
+              <ion-avatar box-shadow>
+                <img [src]="item.avatar">
+              </ion-avatar>
+              <!--Title and Subtitle -->
+              <ion-label padding-start>
+                <h2 text-size-md text-color-primary font-bold text-wrap>{{item.title}}</h2>
+                <h3 text-size-xs text-color-primary font-light text-wrap>{{item.subtitle}}</h3>
+              </ion-label>
+              <ion-button default-button text-capitalize box-shadow slot="end">
+                {{item.button}}
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

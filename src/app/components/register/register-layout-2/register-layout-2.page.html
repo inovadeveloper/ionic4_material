@@ -1,0 +1,52 @@
+<!-- Themes Register + logo 1 -->
+<ion-page class="ion-page">
+  <!-- Content -->
+  <ion-content *ngIf="data != null">
+    <ion-grid no-padding>
+      <ion-row align-items-center *ngIf="data != null">
+        <ion-col no-padding size="12" background-size [ngStyle]="{'background-image': 'url(' + data.background + ')'}">
+          <h1 text-size-md text-color-accent font-regular text-wrap register-title>{{data.title}}</h1>
+        </ion-col>
+        <ion-col no-padding size="12" size-md="8" push-md="2">
+          <!---Form-->
+          <form padding-top>
+            <!---Input field username-->
+            <ion-item input lines="none">
+              <ion-label padding-horizontal text-size-sm text-color-accent font-regular position="stacked">{{data.lableUsername}}</ion-label>
+              <ion-input required type="text" [placeholder]="data.username" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.username"></ion-input>
+              <ion-icon *ngIf="!isUsernameValid" icon-small name="remove-circle"></ion-icon>
+            </ion-item>
+            <!---Input field password-->
+            <ion-item input lines="none">
+              <ion-label padding-horizontal text-size-sm text-color-accent font-regular position="stacked">{{data.lablePassword}}</ion-label>
+              <ion-input required type="password" [placeholder]="data.password" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.password"></ion-input>
+              <ion-icon *ngIf="!isPasswordValid" icon-small name="remove-circle"></ion-icon>
+            </ion-item>
+            <!---Input field email-->
+            <ion-item input lines="none">
+              <ion-label padding-horizontal text-size-sm text-color-accent font-regular position="stacked">{{data.lableEmail}}</ion-label>
+              <ion-input required type="email" [placeholder]="data.email" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></ion-input>
+              <ion-icon *ngIf="!isEmailValid" icon-small name="remove-circle"></ion-icon>
+            </ion-item>
+            <!---Input field country-->
+            <ion-item input lines="none">
+              <ion-label padding-horizontal text-size-sm text-color-accent font-regular position="stacked">{{data.lableCountry}}</ion-label>
+              <ion-input required type="text" [placeholder]="data.country" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.country"></ion-input>
+              <ion-icon *ngIf="!isCountryValid" icon-small name="remove-circle"></ion-icon>
+            </ion-item>
+            <!---Input field city-->
+            <ion-item input lines="none">
+              <ion-label padding-horizontal text-size-sm text-color-accent font-regular position="stacked">{{data.lableCity}}</ion-label>
+              <ion-input required type="text" [placeholder]="data.city" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.city"></ion-input>
+              <ion-icon *ngIf="!isCityValid" icon-small name="remove-circle"></ion-icon>
+            </ion-item>
+            <!---Register button-->
+            <ion-button button-clear text-capitalize fill="clear" float-end margin-top margin-bottom margin-end
+              (click)="onRegisterFunc()">{{data.register}}
+            </ion-button>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

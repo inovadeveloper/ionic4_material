@@ -1,0 +1,29 @@
+/* Style component 4
+========================================================*/
+agm-map {
+  height: 250px;
+}
+
+ion-grid {
+  height: 100%;
+
+  ion-row {
+    height: calc(100% - 300px);
+  }
+}
+
+[textarea] {
+  min-height: 280px;
+  height: 100%;
+
+  ion-item {
+    height: 100% ;
+    width: 100% !important;
+    display: -webkit-inline-box;
+
+    ion-textarea {
+      height: 100%;
+      width: 100% !important;
+    }
+  }
+}

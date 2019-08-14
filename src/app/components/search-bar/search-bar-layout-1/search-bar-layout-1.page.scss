@@ -1,0 +1,14 @@
+
+ion-card {
+  position: relative;
+  height: 250px;
+  border-radius: var(--border-radius, 5px);
+
+  ion-item {
+    position: absolute;
+    --background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

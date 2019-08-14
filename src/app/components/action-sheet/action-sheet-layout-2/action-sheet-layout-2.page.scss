@@ -1,0 +1,20 @@
+/*  Theme Action Sheet - News
+===========================================*/
+// Settings Big Image
+[background-size] {
+  height: 300px;
+  position: relative;
+
+  ion-item {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+[button-action-shit] {
+  ion-icon {
+    color: var(--cs-icon-color-primary);
+  }
+}

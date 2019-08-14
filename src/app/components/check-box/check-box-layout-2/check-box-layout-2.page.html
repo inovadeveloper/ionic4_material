@@ -1,0 +1,21 @@
+<!-- CHECK BOX --COMPONENT 2 -->
+<ion-grid no-padding>
+  <ion-row>
+    <ion-col no-padding size="12" *ngIf="data != null">
+      <ion-list>
+        <ion-item *ngFor="let entry of data;" (click)="onItemClickFunc(entry)">
+          <!-- Avatar Image -->
+          <ion-thumbnail>
+            <img [src]="entry.image">
+          </ion-thumbnail>
+          <!-- Avatar Title -->
+          <ion-label text-size-xs padding-start>
+            <h2 text-size-md text-color-primary font-bold text-wrap>{{entry.title}}</h2>
+            <h3 text-size-xs text-color-primary font-light text-wrap>{{entry.subtitle}}</h3>
+          </ion-label>
+          <ion-checkbox [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,14 @@
+
+ion-toolbar {
+  color: var(--cs-text-light, #ffffff);
+}
+
+.ios {
+  ion-back-button,
+  ion-menu-button {
+    --color: var(--cs-text-light, #ffffff);
+  }
+}
+ion-label {
+  overflow: visible !important;
+}

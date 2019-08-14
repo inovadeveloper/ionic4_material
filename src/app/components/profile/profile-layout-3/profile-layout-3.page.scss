@@ -1,0 +1,11 @@
+/* Profile 3
+========================================*/
+ion-card {
+  border-radius: var(--border-radius, 5px);
+  margin: 10px;
+}
+[social-share] {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}

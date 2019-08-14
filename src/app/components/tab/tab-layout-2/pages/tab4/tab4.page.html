@@ -1,0 +1,31 @@
+<ion-content>
+  <!--Theme  Full image cards with avatar -->
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col siz="12" size-md="6" *ngFor="let item of data.items">
+        <ion-card no-padding box-shadow
+          (click)="onItemClickFunc(item, $event)">
+          <ion-item lines="none" transparent>
+            <!-- Avatar -->
+            <ion-avatar slot="start">
+              <img [src]="item.avatar" alt="">
+            </ion-avatar>
+            <!-- Title And Subtitle -->
+            <ion-label>
+              <h2 text-size-md text-color-primary font-bold text-wrap>{{item.avatarTitle}}</h2>
+              <h3 text-size-xs text-color-primary font-light text-wrap>{{item.avatarSubtitle}}</h3>
+              <p text-size-sm text-color-primary font-bold text-wrapl>{{item.time}}</p>
+            </ion-label>
+          </ion-item>
+          <!-- Images -->
+          <ion-img [src]="item.image" alt=""></ion-img>
+          <!-- Content -->
+          <ion-card-content transparent>
+            <h2 text-size-md text-color-primary font-bold text-wrap padding-top>{{item.title}}</h2>
+            <p text-size-p text-color-primary font-light padding-top>{{item.description}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,14 @@
+/* Style component 2
+========================================================*/
+
+ion-item-option {
+  --background: var(--cs-background-accent, #FB5135);
+
+  [button-clear] {
+    color: var(--cs-text-color-light, #fff);
+  }
+}
+
+ion-label {
+  overflow: visible !important;
+}

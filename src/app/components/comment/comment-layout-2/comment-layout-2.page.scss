@@ -1,0 +1,27 @@
+/* Style component 2
+========================================================*/
+ion-list {
+  overflow: visible;
+
+  ion-item {
+    overflow: visible;
+    position: relative;
+    --background: transparent;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      background: var(--cs-background-accent);
+      top: 50%;
+      left: 52px;
+      height: 100%;
+    }
+  }
+}
+
+ion-list > ion-item:last-child {
+  &:before {
+    display: none;
+  }
+}

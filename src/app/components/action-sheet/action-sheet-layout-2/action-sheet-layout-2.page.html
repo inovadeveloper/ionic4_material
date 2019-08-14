@@ -1,0 +1,49 @@
+<!-- ACTION SHEET --COMPONENT 2-->
+<ion-page class="ion-page">
+  <!--- Header -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content (ionScroll)="logScrolling($event)" [scrollEvents]="true">
+    <div background-size class="header-image" [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+      <ion-item lines="none" transparent>
+        <ion-label>
+          <!-- Category -->
+          <span text-size-xs text-color-light font-bold text-uppercase>{{data.category}}</span>
+          <!-- Parallax-title -->
+          <h1 text-size-xl text-color-light font-bold text-wrap>{{data.title}}</h1>
+        </ion-label>
+      </ion-item>
+    </div>
+    <ion-grid no-padding *ngIf="data != null">
+      <ion-row>
+        <ion-col size="12" no-padding>
+          <ion-item>
+            <!-- Avatar-->
+            <ion-avatar>
+              <img [src]="data.avatar" />
+            </ion-avatar>
+            <ion-label padding-start>
+              <h2 text-size-md text-color-primary font-bold text-capitalize text-wrap>{{data.subtitle}}</h2>
+            </ion-label>
+            <!-- Share Button --->
+            <ion-button button-action-shit slot="end" (click)="presentActionSheet(data, $event)">
+              <ion-icon [name]="data.shareIcon"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <ion-item lines="none" *ngFor="let item of data.items;let i = index">
+            <ion-label>
+              <h2 text-size-md text-color-primary font-regular text-wrap padding-bottom>{{item.title}}</h2>
+              <p text-size-xs text-color-secondary font-regular text-wrap>{{item.subtitle}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

@@ -1,0 +1,45 @@
+<!-- ACTION SHEET --COMPONENT 3-->
+<ion-page class="ion-page">
+  <!--- Header -->
+  <ion-header>
+      <ion-toolbar box-shadow>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{data.toolbarTitle}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  <ion-content>
+    <ion-grid *ngIf="data != null">
+      <ion-row *ngIf="data != null">
+        <!-- Cards Full Image-->
+        <ion-col padding-half size="12" size-md="6" *ngFor="let item of data.items">
+          <!-- Card Big Image-->
+          <ion-card no-margin box-shadow (click)="onItemClickFunc(item, $event)">
+            <!-- <ion-card-header> -->
+            <ion-item lines="none">
+              <ion-label>
+                <!-- Card Categoty-->
+                <span text-size-sm text-color-primary font-bold text-uppercase>{{item.category}}</span>
+                <!-- Card Title-->
+                <h2 text-size-xl text-color-primary font-regular text-wrap>{{item.title}}</h2>
+                <!-- Card Subtitle-->
+                <h4 text-size-xs text-color-secondary font-light text-wrap>{{item.subtitle}}</h4>
+              </ion-label>
+              <ion-label slot="end">
+                <!-- Share Button --->
+                <ion-button button-action-shit float-end (click)="presentActionSheet(data, $event)">
+                  <ion-icon [name]="data.shareIcon"></ion-icon>
+                </ion-button>
+                <div clearfix></div>
+                <ion-badge float-end>{{item.button}}</ion-badge>
+              </ion-label>
+            </ion-item>
+            <!-- Images-->
+            <img [src]="item.image" />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

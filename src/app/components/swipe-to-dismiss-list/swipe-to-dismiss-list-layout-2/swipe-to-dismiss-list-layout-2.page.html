@@ -1,0 +1,38 @@
+<!-- SWIPE TO DISMISS --COMPONENT 2 -->
+<ion-grid no-padding *ngIf="data != null">
+  <ion-row>
+    <ion-col size="12" no-padding>
+      <ion-list no-margin #dynamicList>
+        <!--Header-->
+        <ion-list-header box-shadow padding>
+          <ion-label lines="none">
+            <h1 text-size-md text-color-accent font-regular text-wrap>{{data.header}}</h1>
+          </ion-label>
+        </ion-list-header>
+        <ion-item-sliding *ngFor="let item of data.items" #slidingItem>
+          <ion-item lines="full" (click)="onItemClickFunc(item, $event)">
+            <!-- Images -->
+            <ion-thumbnail>
+              <ion-img [src]="item.image"></ion-img>
+            </ion-thumbnail>
+            <ion-label padding-start>
+              <h2 text-size-md text-color-primary font-bold text-wrap>{{item.title}}</h2>
+              <p text-size-xs text-color-primary font-light text-wrap>{{item.subtitle}}</p>
+              <ion-button default-button text-capitalize box-shadow>
+                {{item.ionBadge}}
+              </ion-button>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" slot="end">
+            <ion-item-option (click)="onDeleteFunc(item, $event)">
+              <!-- Button -->
+              <ion-button fill="clear" button-clear text-capitalize (click)="delete(item)">
+                {{item.delate}}
+              </ion-button>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

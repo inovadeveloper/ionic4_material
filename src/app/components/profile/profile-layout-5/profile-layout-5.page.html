@@ -1,0 +1,78 @@
+<!--Profile- Profile 1-->
+<ion-content no-padding>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col no-padding size="12">
+        <ion-card no-padding no-margin text-center background-size *ngIf="data != null" [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+          <ion-avatar>
+            <img [src]="data.image" alt="">
+          </ion-avatar>
+          <ion-card-content>
+            <h1 text-size-md text-color-primary font-bold text-wrap>{{data.title}}</h1>
+            <p text-size-xs text-color-primary font-light text-wrap>{{data.subtitle}}</p>
+          </ion-card-content>
+          <div social-share>
+            <!-- Followers-->
+            <ion-item transparent lines="none" (click)="buttonClick()">
+              <ion-label text-center>
+                <span text-size-xs text-color-primary font-bold>{{data.valueFollowers}}</span>
+                <div clearfix></div>
+                <h2 text-size-xs text-color-primary font-bold>{{data.followers}}</h2>
+              </ion-label>
+            </ion-item>
+            <!-- Following -->
+            <ion-item transparent lines="none" (click)="buttonClick()">
+              <ion-label text-center>
+                <span text-size-xs text-color-primary font-bold>{{data.valueFollowing}}</span>
+                <div clearfix></div>
+                <h2 text-size-xs text-color-primary font-bold>{{data.following}}</h2>
+              </ion-label>
+            </ion-item>
+            <!-- Post -->
+            <ion-item transparent lines="none" (click)="buttonClick()">
+              <ion-label text-center>
+                <span text-size-xs text-color-primary font-bold>{{data.valuePosts}}</span>
+                <div clearfix></div>
+                <h2 text-size-xs text-color-primary font-bold>{{data.posts}}</h2>
+              </ion-label>
+            </ion-item>
+          </div>
+          <!-- Social Button-->
+          <ion-button button-icon margin-bottom fill="clear" (click)="onFacebookFunc(data, $event)">
+            <ion-icon slot="icon-only" icon-large [name]="data.logoFacebook"></ion-icon>
+          </ion-button>
+          <ion-button button-icon margin-bottom fill="clear" (click)="onTwitterFunc(data, $event)">
+            <ion-icon slot="icon-only" icon-large [name]="data.logoTwitter"></ion-icon>
+          </ion-button>
+          <ion-button button-icon margin-bottom fill="clear" (click)="onInstagramFunc(data, $event)">
+            <ion-icon slot="icon-only" icon-large [name]="data.logoInstagram"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+      <!-- Info Author-->
+      <ion-col size="12" *ngFor="let item of data.items">
+        <ion-card transparent no-margin>
+          <ion-item transparent lines="none">
+            <ion-label>
+              <h2 text-size-xs text-color-primary font-bold>{{item.title}}</h2>
+              <p text-size-xs text-color-primary font-regular text-wrap padding-top>{{item.subtitle}}</p>
+              <h3 text-size-xs text-color-primary font-bold padding-top>{{item.content}}</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon icon-small [name]="item.iconPhone" item-start></ion-icon>
+            <p text-size-xs text-color-primary font-bold padding-start>{{item.phone}}</p>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon icon-small [name]="item.iconMail" item-start></ion-icon>
+            <p text-size-xs text-color-primary font-bold padding-start>{{item.mail}}</p>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon icon-small [name]="item.iconGlobe" item-start></ion-icon>
+            <p text-size-xs text-color-primary font-bold padding-start>{{item.globe}}</p>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

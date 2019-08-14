@@ -1,0 +1,34 @@
+<!-- GOOGLE CARD --COMPONENT 2 -->
+<ion-grid no-padding *ngIf="data != null">
+  <ion-row>
+    <ion-col size="12" size-md="6" *ngFor="let item of data.items">
+      <ion-card box-shadow class="ion-text-start" (click)="onItemClickFunc(item, $event)">
+        <div card-image>
+          <!--Card image-->
+          <img [src]="item.image" />
+          <div card-title-section padding>
+            <!--Card title-->
+            <h2 text-size-xl text-color-light font-bold text-wrap float-start no-margin>{{item.title}}</h2>
+            <!-- Share Button --->
+              <ion-button button-action-shit float-end (click)="presentActionSheet(data, $event)">
+                <ion-icon [name]="item.shareIcon"></ion-icon>
+              </ion-button>
+          </div>
+        </div>
+        <!--Card content-->
+        <ion-card-content transparent>
+          <!--Card subtitle-->
+          <h1 text-size-md text-color-secondary font-bold text-wrap padding-top>{{item.subtitle}}</h1>
+          <!--Card description-->
+          <p text-size-xs text-color-secondary font-light padding-top>{{item.description}}</p>
+          <ion-item lines="none" no-padding margin-top>
+            <p slot="start" text-size-xl text-color-primary font-bold>{{item.price}}</p>
+            <ion-button default-button slot="end">
+              {{item.button}}
+            </ion-button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

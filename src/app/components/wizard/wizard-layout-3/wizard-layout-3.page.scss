@@ -1,0 +1,25 @@
+ion-slides {
+  height: 100%;
+  position: relative;
+  // Settings Background
+  [background-size] {
+    position: relative;
+    // Card Settings
+    ion-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 50px 20px 20px 20px;
+    }
+  }
+}
+
+ion-button {
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  left: 50%;
+  transform: translate(-50%);
+  --color: var(--cs-text-color-primary);
+}

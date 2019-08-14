@@ -1,0 +1,21 @@
+ion-card {
+  border-radius: var(--border-radius);
+  margin: 10px;
+
+  [card-image] {
+    position: relative;
+
+    img {
+      width: 100% !important;
+    }
+
+    h2 {
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 16px;
+    }
+  }
+}

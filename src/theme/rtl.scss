@@ -1,0 +1,196 @@
+/* SETTINGS RTL STYLE
+=======================================================
+=======================================================*/
+html[dir=rtl] {
+  /* SETTINGS EXP
+      =======================================================*/
+  cs-expandable-list-layout-2 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+  /* SETTINGS CARD
+      =======================================================*/
+  cs-google-card-list-layout-2 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+
+  cs-google-card-list-layout-3 {
+    [text-left] {
+      text-align: right !important;
+    }
+
+    [new-category] {
+      right: unset !important;
+      left: 0;
+    }
+  }
+
+  /* SETTINGS PARALLAX
+      =======================================================*/
+  cs-parallax-layout-3 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+  /* SETTINGS INPUT FIELD
+      =======================================================*/
+  [input] {
+    ion-icon {
+      left: 20px;
+      right: unset !important;
+    }
+  }
+  /* SETTINGS REGISTER
+      =======================================================*/
+  cs-register-layout-1 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+
+  cs-register-layout-2 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+
+    [register-title] {
+      left: unset !important;
+      right: 16px;
+    }
+  }
+  /* SETTINGS REGISTER
+      =======================================================*/
+  cs-wizard-layout-1 {
+    ion-card-content {
+      margin-right: unset !important;
+      margin-left: 20%;
+    }
+
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+
+    ion-card {
+      left: unset !important;
+      right: 16px;
+    }
+
+    [text-left] {
+      text-align: right !important;
+    }
+  }
+  /* SETTINGS COMMENTS WITH TIMELINE
+      =======================================================*/
+  cs-comment-layout-2 {
+    ion-item {
+      &:before {
+        left: unset;
+        right: 50px;
+      }
+    }
+  }
+  /* SETTINGS TABS
+    =======================================================*/
+  ion-tabs {
+    app-tab5 {
+      ion-list > ion-item::before {
+        left: auto !important;
+        right: 50px;
+      }
+    }
+  }
+  /* SETTINGS ACTION SHEET
+=======================================================*/
+  cs-action-sheet-layout-1 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+
+  cs-action-sheet-layout-3 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+  /* SETTINGS TIMELINE
+    =======================================================*/
+  cs-timeline-layout-1,
+  cs-timeline-layout-3 {
+    ion-card {
+      &:after {
+        right: -30px;
+        left: unset;
+      }
+
+      &:before {
+        right: -36px;
+        left: unset;
+      }
+    }
+  }
+
+  cs-timeline-layout-2 {
+    [item-thumbnail] {
+      &:after {
+        right: -30px;
+        left: unset;
+      }
+
+      &:before {
+        right: -36px;
+        left: unset;
+      }
+    }
+  }
+  /* SETTINGS ALERT
+    =======================================================*/
+  .alert-button-group {
+    padding: 8px 8px 8px 0 !important;
+  }
+  /* SETTINGS QRCODE
+    =======================================================*/
+  cs-qrcode-layout-2 {
+    [float-start] {
+      float: right !important;
+    }
+
+    [float-end] {
+      float: left !important;
+    }
+  }
+}

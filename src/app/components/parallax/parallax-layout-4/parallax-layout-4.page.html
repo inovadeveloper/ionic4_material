@@ -1,0 +1,48 @@
+<ion-header [ngClass]="{'active': isHeaderVisible }" >
+  <ion-toolbar transparent>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--- Theme Parallax News -->
+<ion-page class="ion-page">
+  <!--- Header Big Image-->
+  <ion-content scrollEvents="true" parallax-header *ngIf="data != null" (ionScroll)="scrolling($event)">
+    <div background-size class="header-image" [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+      <div info-section>
+        <h2 text-size-md text-color-light font-bold>{{data.category}}</h2>
+        <h2 text-size-xl text-color-light font-bold no-margin text-wrap>{{data.title}}</h2>
+      </div>
+    </div>
+    <!-- Content -->
+    <ion-grid no-padding *ngIf="data != null">
+      <ion-row>
+        <ion-col no-padding size="12" box-shadow>
+          <ion-item lines="none">
+            <!--Avatar-->
+            <ion-avatar>
+              <img [src]="data.avatar">
+            </ion-avatar>
+            <ion-label padding-start>
+              <p text-size-md text-color-primary font-bold text-wrap>{{data.subtitle}}</p>
+            </ion-label>
+            <ion-button button-action-shit slot="end">
+              <ion-icon [name]="data.shareIcon"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-col>
+        <ion-col no-padding size="12" *ngFor="let item of data.items">
+          <ion-item lines="none">
+            <ion-label>
+              <p text-size-md text-color-primary font-regular text-wrap padding-bottom>{{item.title}}</p>
+              <p text-size-md text-color-secondary font-regular text-wrap>{{item.subtitle}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-page>

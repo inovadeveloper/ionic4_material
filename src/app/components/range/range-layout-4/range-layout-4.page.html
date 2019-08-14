@@ -1,0 +1,11 @@
+<ion-list lines="none" *ngIf="data != null">
+  <ion-item>
+      <h2 text-size-xs text-color-accent font-regular slot="start">{{data.title}}</h2>
+  </ion-item>
+    <ion-item>
+        <ion-range dualKnobs="true" pin="true" [(ngModel)]="data.value" (ionChange)="onChangeFunc($event)">
+          <ion-label text-size-sm text-color-secondary font-regular slot="start">{{data.textLeft}}</ion-label>
+          <ion-label text-size-xl text-color-secondary margin-start font-bold slot="end">{{data.textRight}}</ion-label>
+        </ion-range>
+    </ion-item>
+</ion-list>

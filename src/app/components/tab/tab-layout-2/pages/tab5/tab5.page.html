@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col no-padding size="12">
+        <ion-list>
+          <ion-list-header>
+            <p text-size-xs text-color-primary font-bold padding-left>{{data.allComments}}</p>
+          </ion-list-header>
+          <ion-item transparent *ngFor="let item of data.items"
+            (click)="onItemClickFunc(item, $event)">
+            <ion-avatar slot="start">
+              <img [src]="item.image">
+            </ion-avatar>
+            <ion-label >
+              <h2 text-size-md text-color-primary font-bold text-wrap>{{item.title}}</h2>
+              <p text-size-xs text-color-primary font-light text-wrap>{{item.time}}</p>
+              <p text-size-xs text-color-primary font-light text-wrap padding-top>
+                {{item.description}}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
